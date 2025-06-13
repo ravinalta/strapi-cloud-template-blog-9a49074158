@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_nutrition_paragraphs",
+  "info": {
+    "singularName": "product-nutrition-paragraph",
+    "pluralName": "product-nutrition-paragraphs",
+    "displayName": "ProductNutritionParagraph"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Body": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "product_nutrition_chapters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-nutrition-chapter.product-nutrition-chapter",
+      "mappedBy": "product_nutrition_paragraph"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_nutrition_chapters",
+  "info": {
+    "singularName": "product-nutrition-chapter",
+    "pluralName": "product-nutrition-chapters",
+    "displayName": "ProductNutritionChapter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Title": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Body": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "product_nutrition_paragraph": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-nutrition-paragraph.product-nutrition-paragraph",
+      "inversedBy": "product_nutrition_chapters"
+    },
+    "Image": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "product_nutrition_chapter"
+    }
+  }
+}
